@@ -1,33 +1,104 @@
-.App {
-  text-align: center;
+/* COLORS
+#24292e
+*/
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI,
+    Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji,
+    Segoe UI Symbol;
+  line-height: 1.5;
+  font-size: 14px;
+  font-weight: 500;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+main {
+  margin: 0 auto;
+  max-width: 980px;
+}
+
+a {
+  color: #0366d6;
+  text-decoration: none;
+}
+
+/* Header Component ------------------------------- */
+.Header {
+  color: #ffffff;
+  background-color: #24292e;
+  height: 60px;
+
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 0 20px;
+  margin-bottom: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.Header label {
+  background-color: rgba(255, 255, 255, 0.123);
+  border-radius: 3px;
+  width: 20em;
+  padding-right: 10px;
+  margin: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Header input {
+  background-color: #ffffff00;
+  line-height: 30px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 3px;
+  width: 100%;
+  padding: 0 10px;
+}
+
+.Header input:focus {
+  background-color: #fafbfc;
+}
+
+.Header a {
+  color: inherit;
+  text-decoration: none;
+  padding: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.Header a:hover,
+.Header a:active {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Notice ----------------------------------------- */
+
+.Notice {
+  border: 1px solid #e1e4e8;
+  text-align: center;
+  width: 100%;
+  height: 145px;
+  padding: 24px;
+}
+
+.Notice h3 {
+  margin-bottom: 8px;
+}
+
+.highlight.green {
+  background-color: #6ce26a;
+  border-radius: 2px;
+  box-shadow: inset 0 -1px 0 rgba(27, 31, 35, 0.12);
+  font-size: 12px;
+  font-weight: 600;
+  height: 20px;
+  line-height: 15px;
+  padding: 0.15em 4px;
+  text-align: text-top;
 }
