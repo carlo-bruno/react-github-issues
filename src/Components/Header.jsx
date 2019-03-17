@@ -1,10 +1,13 @@
 import React from "react";
+import { ReactComponent as Logo } from "../images/github-logo.svg";
 // import link
 
 const Header = (props) => {
   return (
     <header className="Header">
-      <span>Github</span>
+      <span>
+        <Logo />
+      </span>
       <label htmlFor="search">
         <input
           type="search"
