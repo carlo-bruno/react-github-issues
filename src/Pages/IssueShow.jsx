@@ -4,6 +4,10 @@ import ReactMarkdown from "react-markdown";
 import { ReactComponent as Open } from "../images/open.svg";
 
 const IssueShow = (props) => {
+  let theIssue = props.issues.find((issue) => {
+    return issue.number === parseInt(props.match.params.number);
+  });
+
   // title, number, state, created_at, body
   let {
     title,
@@ -12,7 +16,7 @@ const IssueShow = (props) => {
     body,
     user,
     comments
-  } = props.issue;
+  } = theIssue;
 
   let date = moment(created_at).fromNow();
   let commentSpan = `${comments} ${

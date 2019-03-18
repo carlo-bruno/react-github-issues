@@ -1,10 +1,11 @@
 import React, { Component } from "react";
+import { BrowserRouter as BR, Route } from "react-router-dom";
 import axios from "axios";
 import "./App.css";
 import Header from "./Components/Header";
 import Notice from "./Components/Notice";
-// import LandingPage from "./Pages/LandingPage";
-// import IssuesPage from "./Pages/IssuesPage";
+import LandingPage from "./Pages/LandingPage";
+import IssuesPage from "./Pages/IssuesPage";
 import IssueShow from "./Pages/IssueShow";
 
 class App extends Component {
@@ -19,25 +20,39 @@ class App extends Component {
     const url = `https://api.github.com/repos/facebook/react/issues?page=1&per_page=100`;
 
     axios.get(url).then((response) => {
-      console.log(response.data);
       this.setState({ issues: response.data });
     });
   }
 
   render() {
     return (
-      <div>
-        <Header />
-        <main>
-          <Notice />
+      <BR>
+        <div>
+          <Header />
+          <main>
+            <Notice />
 
-          {/* <LandingPage /> */}
-          {/* <IssuesPage issues={this.state.issues} /> */}
-          {this.state.issues.length > 0 ? (
-            <IssueShow issue={this.state.issues[9]} />
-          ) : null}
-        </main>
-      </div>
+            <Route exact path="/" component={LandingPage} />
+            {/* <LandingPage /> */}
+            <Route
+              exact
+              path="/issues"
+              render={() => (
+                <IssuesPage issues={this.state.issues} />
+              )}
+            />
+            <Route
+              path="/issues/:number"
+              render={(props) => (
+                <IssueShow issues={this.state.issues} {...props} />
+              )}
+            />
+            {/* {this.state.issues.length > 0 ? (
+              <IssueShow issue={this.state.issues[9]} />
+            ) : null} */}
+          </main>
+        </div>
+      </BR>
     );
   }
 }

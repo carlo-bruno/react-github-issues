@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import moment from "moment";
 import { ReactComponent as Comment } from "../images/comment.svg";
 import { ReactComponent as Open } from "../images/open.svg";
@@ -15,12 +16,12 @@ const IssueCard = (props) => {
   } = props.issue;
 
   // loop through labes, add class
-  let labelSpan = labels.map((label) => {
+  let labelSpan = labels.map((label, i) => {
     let bgc = {
       backgroundColor: `#${label.color}`
     };
     return (
-      <span className="issue-label" style={bgc}>
+      <span key={i} className="issue-label" style={bgc}>
         {" "}
         {label.name}
       </span>
@@ -46,9 +47,9 @@ const IssueCard = (props) => {
       </div>
       <div className="card-info">
         <div>
-          <a href="/">
+          <Link to={`/issues/${number}`}>
             <h3>{title}</h3>
-          </a>
+          </Link>
           {labelSpan}
         </div>
         <p className="info-text">
