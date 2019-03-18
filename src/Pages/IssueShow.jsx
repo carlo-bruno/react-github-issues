@@ -1,5 +1,6 @@
 import React from "react";
 import moment from "moment";
+import ReactMarkdown from "react-markdown";
 import { ReactComponent as Open } from "../images/open.svg";
 
 const IssueShow = (props) => {
@@ -30,22 +31,31 @@ const IssueShow = (props) => {
             <Open />
             Open
           </span>
-          <strong>{user.login}</strong> &nbsp;opened this {date} ·{" "}
-          {commentSpan}
+          <strong>
+            <a href={user.html_url}>{user.login}</a>
+          </strong>{" "}
+          &nbsp;opened this {date} · {commentSpan}
         </p>
       </header>
 
       <section className="issue">
         <div className="image-box">
-          <img src={user.avatar_url} alt="user profile" />
+          <a href={user.html_url}>
+            <img src={user.avatar_url} alt="user profile" />
+          </a>
         </div>
         <div className="issue-content">
           <div className="header">
             <p>
-              <strong>{user.login}</strong> commented time ago
+              <strong>
+                <a href={user.html_url}>{user.login}</a>
+              </strong>{" "}
+              commented time ago
             </p>
           </div>
-          <div className="issue-body">{body}</div>
+          <div className="issue-body">
+            <ReactMarkdown source={body} />
+          </div>
         </div>
       </section>
     </div>

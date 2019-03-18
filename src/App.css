@@ -1,6 +1,7 @@
 /* COLORS
 #24292e
 #586069
+#0366d6
 */
 
 * {
@@ -237,6 +238,10 @@ svg {
 .IssueShow h1 {
   font-size: 2rem;
   font-weight: 500;
+  line-height: 1.125;
+  margin-bottom: 0;
+  margin-right: 150px;
+  word-wrap: break-word;
 }
 
 .IssueShow header {
@@ -249,6 +254,14 @@ svg {
   display: flex;
   align-items: center;
   padding-top: 8px;
+}
+
+.IssueShow header a {
+  color: inherit;
+}
+
+.IssueShow header a:hover {
+  color: #0366d6;
 }
 
 .IssueShow .issue-number {
@@ -275,6 +288,8 @@ svg {
   margin-right: 5px;
 }
 
+/* Issue Content */
+
 .IssueShow .issue {
   display: flex;
 }
@@ -286,10 +301,11 @@ svg {
 .IssueShow .image-box img {
   width: 45px;
   height: 45px;
+  border-radius: 3px;
 }
 
 .IssueShow .issue-content {
-  width: 70%;
+  width: 71%;
   border: 1px solid #d1d5da;
   border-radius: 4px;
 }
@@ -301,6 +317,30 @@ svg {
   padding: 10px;
 }
 
+.IssueShow .header a {
+  color: inherit;
+}
+
 .IssueShow .issue-body {
   padding: 15px;
+}
+.IssueShow .issue-body p {
+  margin-bottom: 16px;
+}
+
+.IssueShow .issue-body pre {
+  background-color: #f6f8fa;
+  border-radius: 3px;
+  font-size: 85%;
+  line-height: 1.45;
+  overflow: auto;
+  padding: 16px;
+}
+
+.IssueShow .issue-body hr {
+  background-color: #e1e4e8;
+  border: 0;
+  height: 0.25em;
+  margin: 24px 0;
+  padding: 0;
 }

@@ -4,7 +4,7 @@ import "./App.css";
 import Header from "./Components/Header";
 import Notice from "./Components/Notice";
 // import LandingPage from "./Pages/LandingPage";
-import IssuesPage from "./Pages/IssuesPage";
+// import IssuesPage from "./Pages/IssuesPage";
 import IssueShow from "./Pages/IssueShow";
 
 class App extends Component {
@@ -34,7 +34,7 @@ class App extends Component {
           {/* <LandingPage /> */}
           {/* <IssuesPage issues={this.state.issues} /> */}
           {this.state.issues.length > 0 ? (
-            <IssueShow issue={this.state.issues[3]} />
+            <IssueShow issue={this.state.issues[9]} />
           ) : null}
         </main>
       </div>
